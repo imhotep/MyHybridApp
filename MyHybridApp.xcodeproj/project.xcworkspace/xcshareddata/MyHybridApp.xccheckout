@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4159F24C-5D7F-4B32-A8A9-8F45703CD878</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MyHybridApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8A2E1B5D91A32AD021B016AA3E24E56EA5F3ADE2</key>
+		<string>github.com:imhotep/MyHybridApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MyHybridApp.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8A2E1B5D91A32AD021B016AA3E24E56EA5F3ADE2</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:imhotep/MyHybridApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8A2E1B5D91A32AD021B016AA3E24E56EA5F3ADE2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8A2E1B5D91A32AD021B016AA3E24E56EA5F3ADE2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MyHybridApp</string>
+		</dict>
+	</array>
+</dict>
+</plist>
