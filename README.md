@@ -7,7 +7,9 @@ Steps to recreate:
 
 - Run the following command:
 
-    cordova-ios/bin/create MyApp org.example.myapp MyApp
+```bash
+cordova-ios/bin/create MyApp org.example.myapp MyApp
+```
 
 - Select Classes then click on File -> New -> File -> User Interface name it `Main.storyboard`.
 
@@ -27,67 +29,79 @@ Steps to recreate:
 - Go back to the storyboard and select the second scene's controller and change it to `MyTableViewController`
 - Go to `MyTableViewController.h` and add this property to the interface
 
-    @property (nonatomic,strong) NSMutableArray* bookmarks;
+```objc
+@property (nonatomic,strong) NSMutableArray* bookmarks;
+```
 
 - Go to `MyTableViewController.m` and add this line in `viewDidLoad`
-    
-    self.bookmarks = [NSMutableArray array];
+
+```objc
+self.bookmarks = [NSMutableArray array];
+```
 
 - change `numberOfSectionsInTableView` method to "return 1"
 - add this code in `cellForRowAtIndexPath`
+```objc
+UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell1" forIndexPath:indexPath];
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell1" forIndexPath:indexPath];
-    
-    cell.textLabel.text = [self.bookmarks objectAtIndex:indexPath.row];
-    
-    return cell;
+cell.textLabel.text = [self.bookmarks objectAtIndex:indexPath.row];
 
+return cell;
+```
 - Select Classes and then Click on File -> New -> File -> iOS - Source -> Cocoa Touch Class
 - Enter `MyHybridPlugin` in Class and select `CDVPlugin` in `Subclass of` and follow the steps
 - Go to `MyHybridPlugin.h`, import `<Cordova/CDVPlugin.h>` and add this method
-        -(void)addBookmark:(CDVInvokedUrlCommand*) command;
+```objc
+-(void)addBookmark:(CDVInvokedUrlCommand*) command;
+```
 - Go to `MyHybridPlugin.m` and add this code
+```objc
+-(void)addBookmark:(CDVInvokedUrlCommand*) command {
 
-    -(void)addBookmark:(CDVInvokedUrlCommand*) command {
+    NSString* bookmark = [command.arguments objectAtIndex:0];
 
-        NSString* bookmark = [command.arguments objectAtIndex:0];
+    if(bookmark) {
+        NSLog(@"addBookmark %@", bookmark);
+        MainViewController* mvc = (MainViewController*)[self viewController];
 
-        if(bookmark) {
-            NSLog(@"addBookmark %@", bookmark);
-            MainViewController* mvc = (MainViewController*)[self viewController];
-
-            MyTableViewController* tvc = (MyTableViewController*)mvc.tabBarController.viewControllers[1];
-            [tvc.bookmarks addObject:bookmark];
-            [tvc.tableView reloadData];
-            CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
-            [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-        } else {
-            CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
-            [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-        }
+        MyTableViewController* tvc = (MyTableViewController*)mvc.tabBarController.viewControllers[1];
+        [tvc.bookmarks addObject:bookmark];
+        [tvc.tableView reloadData];
+        CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    } else {
+        CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
     }
+}
+```
 
 - go to www/index.html and add these lines just under the `<div id="deviceready">` 
 
-    <label for="bookmark">Bookmark</label>
-    <input id="bookmark" type="text" />
-    <button id="bookmarkBtn">Add a bookmark</button>
+```HTML
+<label for="bookmark">Bookmark</label>
+<input id="bookmark" type="text" />
+<button id="bookmarkBtn">Add a bookmark</button>
+```
 
 - go to www/js/index.js to the app object
 
-    addBookmark: function() {
-        var win = function(d) {
-            console.log("Bookmark added!");
-        };
-        var fail = function(e) {
-            console.log(e)
-        }
-        var bookmark = document.getElementById("bookmark").value;
-        cordova.exec(win, fail, "MyHybridPlugin", "addBookmark", [bookmark]);
+```javascript
+addBookmark: function() {
+    var win = function(d) {
+        console.log("Bookmark added!");
+    };
+    var fail = function(e) {
+        console.log(e)
     }
+    var bookmark = document.getElementById("bookmark").value;
+    cordova.exec(win, fail, "MyHybridPlugin", "addBookmark", [bookmark]);
+}
+```
 
 - open config.xml and add a reference to our plugin
-
-    <feature name="MyHybridPlugin">
-        <param name="ios-package" value="MyHybridPlugin" />
-    </feature>
+```XML
+<feature name="MyHybridPlugin">
+    <param name="ios-package" value="MyHybridPlugin" />
+</feature>
+```
