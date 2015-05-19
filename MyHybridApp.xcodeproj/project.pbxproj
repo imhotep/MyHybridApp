@@ -41,6 +41,7 @@
 		7E7966E71810823500FA85AD /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DD1810823500FA85AD /* icon-small@2x.png */; };
 		8835213B1B0380E400D2D5A1 /* MyHybridPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8835213A1B0380E400D2D5A1 /* MyHybridPlugin.m */; };
 		8835213F1B03A70200D2D5A1 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8835213E1B03A70200D2D5A1 /* MyTableViewController.m */; };
+		88AD83DB1B0936800025F468 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88AD83DA1B0936800025F468 /* Main.storyboard */; };
 		9355D0F01CDD49D2A7395B89 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = DF14925FF69446F297D93311 /* CDVLogger.m */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 /* End PBXBuildFile section */
@@ -105,6 +106,7 @@
 		8835213A1B0380E400D2D5A1 /* MyHybridPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHybridPlugin.m; sourceTree = "<group>"; };
 		8835213D1B03A70200D2D5A1 /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
 		8835213E1B03A70200D2D5A1 /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
+		88AD83DA1B0936800025F468 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* MyHybridApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "MyHybridApp-Info.plist"; path = "../MyHybridApp-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
 		DF14925FF69446F297D93311 /* CDVLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVLogger.m; path = org.apache.cordova.console/CDVLogger.m; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				88AD83DA1B0936800025F468 /* Main.storyboard */,
 				8835213D1B03A70200D2D5A1 /* MyTableViewController.h */,
 				8835213E1B03A70200D2D5A1 /* MyTableViewController.m */,
 				302D95EE14D2391D003F00A1 /* MainViewController.h */,
@@ -335,6 +338,7 @@
 				30B4F30819D5E08600D9F7D8 /* Default-736h.png in Resources */,
 				308D05381370CCF300D202BF /* icon.png in Resources */,
 				308D05391370CCF300D202BF /* icon@2x.png in Resources */,
+				88AD83DB1B0936800025F468 /* Main.storyboard in Resources */,
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
 				7E7966E01810823500FA85AD /* icon-50.png in Resources */,
 				7E7966E31810823500FA85AD /* icon-60@2x.png in Resources */,
